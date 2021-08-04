@@ -47,11 +47,11 @@
     .tabs li{
         cursor: pointer;
         margin-right: 20px;
-        color: #b9c5d6;
+        color: #9697af;
     }
 
     .tabs .active{
-        color: #008ae6;
+        color: #ffffff;
     }
 
 </style>
