@@ -15,7 +15,7 @@ export const store = writable({
             label: 'Archived'
         }
     ],
-    activeTab: 'done'
+    activeTab: 'todo'
 });
 
 export const change = (previous, update) => {
