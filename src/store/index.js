@@ -15,7 +15,21 @@ export const store = writable({
             label: 'Archived'
         }
     ],
-    activeTab: 'todo'
+    activeTab: 'todo',
+    tasks: [
+        {
+            id: 0,
+            task: 'Learn Svelte',
+            completed: false,
+            archived: false
+        },
+        {
+            id: 1,
+            task: 'Goto Airport',
+            completed: false,
+            archived: false
+        }
+    ]
 });
 
 export const change = (previous, update) => {

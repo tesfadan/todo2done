@@ -29,7 +29,7 @@
 
 <style lang="scss">
     .tabs{
-        padding: 32px;
+        padding: 32px 48px;
         width: 100%;
     }
 
