@@ -1,6 +1,12 @@
 import { writable } from 'svelte/store';
 
 export const store = writable({
+    newTask: {
+        task: '',
+        id: 0,
+        completed: false,
+        archived: false
+    },
     tabs: [
         {
             uid: 'todo',

@@ -25,7 +25,8 @@
         autofocus
         class="taskContent"
         bind:value={task.task}
-        on:dblclick={()=> editMode = !editMode} />
+        on:dblclick={()=> editMode = !editMode} 
+        >
     {:else}
          <!-- else content here -->
     <div on:dblclick={()=> editMode = !editMode} class="taskContent">{task.task}</div>
@@ -37,7 +38,7 @@
             {task.completed ? 'Mark undone': 'Mark Done'}
         </button>
         <!-- <button>Edit</button> -->
-        <button disabled={task.archived} on:click={()=>markTask(task.id).archive()}>Delete</button>
+        <button class="deleteBtn" disabled={task.archived} on:click={()=>markTask(task.id).archive()}>Delete</button>
     </div>
 </div>
 
@@ -59,6 +60,8 @@
         border: 1px solid #EEEFF6;
     }
 
+
+
     .taskContent{
         font-size: 20px;
         color: #cccddd;
@@ -70,6 +73,8 @@
         outline: 0px;
         display: flex;
         line-height: 16px;
+        width: 100%;
+        margin-right: 24px;
     }
 
     .task.task.editing .taskContent{
@@ -80,8 +85,11 @@
         height: max-content;
         display: flex;
         opacity: 0;
+        transition: 0.07s ease-in;
+        width: 300px;
+        justify-content: flex-end;
     }
-    
+
     .taskOptions button{
         margin-left: 12px;
         cursor: pointer;
@@ -91,15 +99,24 @@
         opacity: 1;
     }
 
+    .editing:hover .taskOptions{
+        opacity: 0;
+    }
+
     button{
         background: unset;
         border: unset;
-         /* border: 1px solid #CDCFE8; */
-         color: #b3b5ca;
+        transition: 0.07s ease-in;
+        color: #b3b5ca;
         padding: 8px 12px;
         border-radius: 17px;
         font-size: 14px;
         background-color: #EEEFF605;
+    }
+
+    button.deleteBtn:hover{
+        color: #ff1d34;
+        background-color: #ff1d3430;
     }
 
     button:hover{

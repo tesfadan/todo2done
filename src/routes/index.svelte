@@ -2,6 +2,7 @@
 <script>
 import Task from "../Components/Task.svelte";
 import Tabs from "../Components/Tabs.svelte";
+import NewTask from "../Components/NewTask.svelte";
 import { change, store } from "../store";
     let tasks = [];
     let activeTab;
@@ -41,6 +42,11 @@ import { change, store } from "../store";
              <!-- content here -->
             <Task {task} markTask={markTask}/>
         {/each}
+
+        {#if $store.activeTab === 'todo'}
+        <!-- content here -->
+            <NewTask />
+        {/if}
     </div>
 </div>
 
@@ -48,5 +54,7 @@ import { change, store } from "../store";
 <style>
     .list{
         padding: 0px 32px;
+        display: flex;
+        flex-flow: column-reverse;
     }
 </style>
