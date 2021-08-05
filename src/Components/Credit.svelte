@@ -1,5 +1,3 @@
-
-
 <div class="credit">
     <div>
         <a href="https://github.com/tesfadan/todo">Github</a>
@@ -7,7 +5,6 @@
     </div>
     <a href="https://tesfadan.com">tesfadan.com</a>
 </div>
-
 
 <style>
     .credit{

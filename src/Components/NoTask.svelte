@@ -1,7 +1,5 @@
 <script>
 import { store } from "../store";
-
-
     let activeTab;
 
     store.subscribe(store => {

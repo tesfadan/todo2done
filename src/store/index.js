@@ -25,7 +25,6 @@ export const store = writable({
     tasks: []
 });
 
-
 export const change = (previous, update) => {
     return { ...previous, ...update }
 }

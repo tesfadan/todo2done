@@ -1,13 +1,13 @@
 
 <script>
-import Task from "../Components/Task.svelte";
-import Tabs from "../Components/Tabs.svelte";
-import NewTask from "../Components/NewTask.svelte";
-import { change, store } from "../store";
-import { onMount } from "svelte";
-import Local from "../Functions/storage";
-import NoTask from "../Components/NoTask.svelte";
-import Credit from "../Components/Credit.svelte";
+    import { onMount } from "svelte";
+    import Credit from "../Components/Credit.svelte";
+    import NewTask from "../Components/NewTask.svelte";
+    import NoTask from "../Components/NoTask.svelte";
+    import Tabs from "../Components/Tabs.svelte";
+    import Task from "../Components/Task.svelte";
+    import Local from "../Functions/storage";
+    import { change,store } from "../store";
     let tasks = [];
     let activeTab;
     let todos;
@@ -83,7 +83,6 @@ import Credit from "../Components/Credit.svelte";
     .app{
         max-width: 1020px;
         width: -webkit-fill-available;
-        /* background-color: #141627; */
         height: 100vh;
         position: relative;
     }

@@ -1,9 +1,6 @@
 <script>
 import Local from "../Functions/storage";
-
 import { store } from "../store";
-
-
     export let task = {
         task: String,
         id: Number,
@@ -14,12 +11,6 @@ import { store } from "../store";
     export let markTask;
 
     let editMode = false;
-
-
-    const blur=()=>{
-        console.log("BLURRR")
-    }
-
 
     const edit =()=>{
         if(editMode){
@@ -42,7 +33,6 @@ import { store } from "../store";
     {#if editMode}
          <!-- content here -->
     <input 
-        autofocus
         class="taskContent"
         bind:value={task.task}
         on:blur={console.log("BLURED")}
@@ -91,12 +81,6 @@ import { store } from "../store";
     .task.editing{
         border: 1px solid #EEEFF6;
     }
-
-
-    .deleteBtn{
-
-    }
-
 
     .taskContent{
         font-size: 20px;

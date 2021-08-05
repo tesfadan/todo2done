@@ -3,7 +3,7 @@ export default function Local() {
         get: async () => {
             var tasks = window.localStorage.getItem("tasks");
             tasks = JSON.parse(tasks);
-            return tasks
+            return tasks === null ? [] : tasks;
         },
         update: (tasks) => {
             var stringfied = JSON.stringify(tasks);
