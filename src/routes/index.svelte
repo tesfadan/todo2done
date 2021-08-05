@@ -33,6 +33,13 @@ import Local from "../Functions/storage";
                 tasks[id].archived = !tasks[id].archived;
                 store.update(store => change(store, tasks));
                 Local().update($store.tasks);
+            },
+            delete: ()=>{
+                console.log(`Delete ${id}`)
+                let index = tasks.findIndex(task => task.id === id);
+                tasks.splice(index, 1);
+                store.update(store => change(store, tasks));
+                Local().update($store.tasks);
             }
         }
     }

@@ -33,13 +33,24 @@
     <div on:dblclick={()=> editMode = !editMode} class="taskContent">{task.task}</div>
     {/if}
 
-    
     <div class="taskOptions">
-        <button on:click={()=>markTask(task.id).done()}>
-            {task.completed ? 'Mark undone': 'Mark Done'}
+        {#if !task.archived}
+             <!-- content here -->
+             <button on:click={()=>markTask(task.id).done()}>
+                {task.completed ? 'Mark Todo': 'Mark Done'}
+            </button>
+        {/if}
+
+        <button on:click={()=>markTask(task.id).archive()}>
+            {!task.archived ? 'Archive': 'Restore'}
         </button>
-        <!-- <button>Edit</button> -->
-        <button class="deleteBtn" disabled={task.archived} on:click={()=>markTask(task.id).archive()}>Delete</button>
+
+       {#if task.archived}
+            <!-- content here -->
+            <button class="deleteBtn" 
+            on:click={()=>markTask(task.id).delete()}>Delete</button>
+       {/if}
+
     </div>
 </div>
 
@@ -61,6 +72,10 @@
         border: 1px solid #EEEFF6;
     }
 
+
+    .deleteBtn{
+
+    }
 
 
     .taskContent{
