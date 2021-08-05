@@ -6,6 +6,8 @@ import NewTask from "../Components/NewTask.svelte";
 import { change, store } from "../store";
 import { onMount } from "svelte";
 import Local from "../Functions/storage";
+import NoTask from "../Components/NoTask.svelte";
+import Credit from "../Components/Credit.svelte";
     let tasks = [];
     let activeTab;
     let todos;
@@ -58,9 +60,7 @@ import Local from "../Functions/storage";
              <!-- content here -->
             <Task {task} markTask={markTask}/>
         {:else}
-            <div class="noTaskMessage">
-                <!-- <p>Nothing to do here</p> -->
-            </div>
+        <NoTask />
         {/each}
 
         {#if $store.activeTab === 'todo'}
@@ -68,6 +68,8 @@ import Local from "../Functions/storage";
             <NewTask />
         {/if}
     </div>
+
+    <Credit />
 </div>
 </div>
 
@@ -82,6 +84,8 @@ import Local from "../Functions/storage";
         max-width: 1020px;
         width: -webkit-fill-available;
         /* background-color: #141627; */
+        height: 100vh;
+        position: relative;
     }
 
     .list{
@@ -90,9 +94,4 @@ import Local from "../Functions/storage";
         flex-flow: column-reverse;
     }
 
-    .noTaskMessage{
-        text-align: center;
-        font-size: 24px;
-        font-weight: 600;
-    }
 </style>
