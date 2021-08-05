@@ -22,21 +22,20 @@ import Local from "../Functions/storage";
     });
 
     const markTask=(id)=>{
+        let index = tasks.findIndex(task => task.id === id);
         // 
         return {
             done: ()=>{
-                tasks[id].completed = !tasks[id].completed;
+                tasks[index].completed = !tasks[index].completed;
                 store.update(store => change(store, tasks));
                 Local().update($store.tasks);
             },
             archive: ()=>{
-                tasks[id].archived = !tasks[id].archived;
+                tasks[index].archived = !tasks[index].archived;
                 store.update(store => change(store, tasks));
                 Local().update($store.tasks);
             },
             delete: ()=>{
-                console.log(`Delete ${id}`)
-                let index = tasks.findIndex(task => task.id === id);
                 tasks.splice(index, 1);
                 store.update(store => change(store, tasks));
                 Local().update($store.tasks);
@@ -51,7 +50,8 @@ import Local from "../Functions/storage";
     })
 </script>
 
-<div>
+<div class="container">
+<div class="app">
     <Tabs />
     <div class="list">
         {#each showing() as task}
@@ -59,11 +59,9 @@ import Local from "../Functions/storage";
             <Task {task} markTask={markTask}/>
         {:else}
             <div class="noTaskMessage">
-                <p>Nothing to do here</p>
-
+                <!-- <p>Nothing to do here</p> -->
             </div>
         {/each}
-
 
         {#if $store.activeTab === 'todo'}
         <!-- content here -->
@@ -71,9 +69,21 @@ import Local from "../Functions/storage";
         {/if}
     </div>
 </div>
+</div>
 
 
 <style>
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .app{
+        max-width: 1020px;
+        width: -webkit-fill-available;
+        /* background-color: #141627; */
+    }
+
     .list{
         padding: 0px 32px;
         display: flex;

@@ -1,4 +1,9 @@
 <script>
+import Local from "../Functions/storage";
+
+import { store } from "../store";
+
+
     export let task = {
         task: String,
         id: Number,
@@ -16,6 +21,21 @@
     }
 
 
+    const edit =()=>{
+        if(editMode){
+            // update here 
+            let index = $store.tasks.findIndex(t => t.id === task.id);
+            $store.tasks[index] = task;
+            Local().update($store.tasks);
+        }
+        else{
+            // start editing
+            console.log("Start Editing")
+        }
+
+       return editMode = !editMode;
+    }
+
 </script>
 
 <div class={`task  ${editMode ? 'editing' : ' ' }`}>
@@ -26,11 +46,11 @@
         class="taskContent"
         bind:value={task.task}
         on:blur={console.log("BLURED")}
-        on:dblclick={()=> editMode = !editMode} 
+        on:dblclick={edit} 
         >
     {:else}
          <!-- else content here -->
-    <div on:dblclick={()=> editMode = !editMode} class="taskContent">{task.task}</div>
+    <div on:dblclick={edit} class="taskContent">{task.task}</div>
     {/if}
 
     <div class="taskOptions">
