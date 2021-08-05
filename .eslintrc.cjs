@@ -1,5 +1,3 @@
-const netlify = require('@sveltejs/adapter-netlify')
-
 module.exports = {
     root: true,
     extends: ['eslint:recommended', 'prettier'],
@@ -13,8 +11,5 @@ module.exports = {
         browser: true,
         es2017: true,
         node: true
-    },
-    kit: {
-        adapter: netlify()
     }
 };
