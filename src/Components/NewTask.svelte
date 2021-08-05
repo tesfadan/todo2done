@@ -1,5 +1,7 @@
 <script>
-    import { change, store } from "../store";
+import { onMount } from "svelte";
+import Local from "../Functions/storage";
+import { change,store } from "../store";
 
     let newTask = {
         task: String,
@@ -10,10 +12,12 @@
 
     store.subscribe(store => {
         newTask = store.newTask;
+
     });
 
     const addTask =()=> {
         console.log($store.tasks)
+        if(newTask.task.replace(" ", '').length > 0 && $store.activeTab === 'todo'){
         store.update(store => change(store, 
         store.tasks.push({
             ...newTask,
@@ -27,8 +31,21 @@
             completed: false,
             archived: false
         }}));
+
+        Local().update($store.tasks);
     }
-    
+
+    }
+
+    onMount(()=>{
+        window.addEventListener("keydown", event =>{
+            if(event.keyCode === 13){
+                addTask();
+            }
+        })
+    });
+
+
 </script>
 <div class="newTask">
     <input 

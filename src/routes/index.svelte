@@ -4,6 +4,8 @@ import Task from "../Components/Task.svelte";
 import Tabs from "../Components/Tabs.svelte";
 import NewTask from "../Components/NewTask.svelte";
 import { change, store } from "../store";
+import { onMount } from "svelte";
+import Local from "../Functions/storage";
     let tasks = [];
     let activeTab;
     let todos;
@@ -25,14 +27,21 @@ import { change, store } from "../store";
             done: ()=>{
                 tasks[id].completed = !tasks[id].completed;
                 store.update(store => change(store, tasks));
+                Local().update($store.tasks);
             },
             archive: ()=>{
                 tasks[id].archived = !tasks[id].archived;
                 store.update(store => change(store, tasks));
+                Local().update($store.tasks);
             }
         }
     }
-
+    onMount(()=>{
+        Local().get().then(res => {
+            console.log(res)
+            store.update(store => change(store, {tasks:res}))
+        });
+    })
 </script>
 
 <div>
@@ -41,7 +50,13 @@ import { change, store } from "../store";
         {#each showing() as task}
              <!-- content here -->
             <Task {task} markTask={markTask}/>
+        {:else}
+            <div class="noTaskMessage">
+                <p>Nothing to do here</p>
+
+            </div>
         {/each}
+
 
         {#if $store.activeTab === 'todo'}
         <!-- content here -->
@@ -56,5 +71,11 @@ import { change, store } from "../store";
         padding: 0px 32px;
         display: flex;
         flex-flow: column-reverse;
+    }
+
+    .noTaskMessage{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
     }
 </style>

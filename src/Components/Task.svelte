@@ -25,6 +25,7 @@
         autofocus
         class="taskContent"
         bind:value={task.task}
+        on:blur={console.log("BLURED")}
         on:dblclick={()=> editMode = !editMode} 
         >
     {:else}
