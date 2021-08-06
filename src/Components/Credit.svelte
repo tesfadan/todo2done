@@ -1,9 +1,9 @@
 <div class="credit">
     <div>
-        <a href="https://github.com/tesfadan/todo">Github</a>
-        <a href="https://twitter.com/tesfadan">Twitter</a>
+        <a href="https://github.com/tesfadan/todo2done" target="_blank">Github</a>
+        <a href="https://twitter.com/tesfadan" target="_blank">Twitter</a>
     </div>
-    <a href="https://tesfadan.com">tesfadan.com</a>
+    <a href="https://tesfadan.com" target="_blank">tesfadan.com</a>
 </div>
 
 <style>
