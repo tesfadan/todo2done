@@ -5,3 +5,7 @@ A Todo app built with Svelte, powered by [`create-svelte`](https://github.com/sv
 ## About
 
 todo2Done is a fun litle project I worked on to learn [`Svelte.js`](https://github.com/). One of the main challenges I had was working with Svelte Store. Took some time but I was able to get comfortable with it and get it to work for this project.
+
+## Connect
+
+Connect with me on [`twitter`](https://twitter.com/tesfadan) to follow along my juorney of learning and building cool things with JavaScript.
