@@ -43,7 +43,8 @@ import { store } from "../store";
     <div on:dblclick={edit} class="taskContent">{task.task}</div>
     {/if}
 
-    <div class="taskOptions">
+         <!-- content here -->
+    <div class="taskOptions {editMode ? 'editMode' : ''}">
         {#if !task.archived}
              <!-- content here -->
              <button on:click={()=>markTask(task.id).done()}>
@@ -84,7 +85,7 @@ import { store } from "../store";
     }
 
     .taskContent{
-        font-size: 20px;
+        font-size: 18px;
         color: #cccddd;
         background-color: unset;
         border: unset;
@@ -118,6 +119,10 @@ import { store } from "../store";
     .taskOptions button{
         margin-left: 12px;
         cursor: pointer;
+    }
+
+    .taskOptions.editMode{
+        display: none;
     }
 
     .task:hover .taskOptions{
