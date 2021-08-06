@@ -30,7 +30,7 @@
 <style lang="scss">
     .tabs{
         padding: 32px 48px;
-        width: 100%;
+        width: -webkit-fill-available;
     }
 
     ol{
@@ -52,6 +52,28 @@
 
     .tabs .active{
         color: #ffffff;
+    }
+
+    @media(max-width: 640px){
+        .tabs{
+            padding: 24px 32px;
+        }
+
+        .tabs ol{
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+
+    @media(max-width: 520px){
+        .tabs{
+            padding: 16px 24px;
+            margin: 12px 0px;
+        }
+
+        .tabs ol{
+            font-size: 18px;
+        }
     }
 
 </style>

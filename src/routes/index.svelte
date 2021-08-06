@@ -93,4 +93,18 @@
         flex-flow: column-reverse;
     }
 
+    @media(max-width: 640px){
+        .list{
+            padding: 0px 24px;
+        }
+    }
+
+    @media(max-width: 520px){
+        .list{
+            padding: 0px 16px;
+        }
+
+    }
+
+
 </style>

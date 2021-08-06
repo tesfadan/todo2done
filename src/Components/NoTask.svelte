@@ -37,4 +37,17 @@ import { store } from "../store";
         font-weight: 600;
         color: #CDCFE850;
     }
+
+    @media(max-width: 640px){
+        h4{
+            font-size: 20px;
+        }
+    }
+
+    @media(max-width: 520px){
+        h4{
+            font-size: 18px;
+        }
+    }
+    
 </style>

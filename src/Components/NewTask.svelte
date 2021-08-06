@@ -104,4 +104,16 @@ import { change,store } from "../store";
         font-weight: 500;
     }
 
+    @media(max-width: 640px){
+        input, button{
+            font-size: 16px;
+        }
+    }
+
+    @media(max-width: 520px){
+        input, button{
+            font-size: 14px;
+        }
+    }
+
 </style>

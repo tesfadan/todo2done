@@ -76,6 +76,7 @@ import { store } from "../store";
         margin-bottom: 18px;
         background: #1c1f31;
         border: 1px solid #9697af20;
+        position: relative;
     }
 
     .task.editing{
@@ -108,6 +109,10 @@ import { store } from "../store";
         transition: 0.07s ease-in;
         width: 300px;
         justify-content: flex-end;
+        position: absolute;
+        background-color: #1c1f31;
+        max-width: max-content;
+        right: 12px;
     }
 
     .taskOptions button{
@@ -141,5 +146,17 @@ import { store } from "../store";
 
     button:hover{
         background-color: #EEEFF610;
+    }
+
+    @media(max-width: 640px){
+        .taskContent{
+            font-size: 16px;
+        }
+    }
+
+    @media(max-width: 520px){
+        .taskContent{
+            font-size: 14px;
+        }
     }
 </style>

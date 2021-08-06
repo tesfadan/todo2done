@@ -34,4 +34,22 @@
     a:last-of-type{
         margin-right: 0px;
     }
+
+    @media(max-width: 640px){
+        .credit{
+            padding: 24px;
+        }
+        a{
+            font-size: 16px;
+        }
+    }
+
+    @media(max-width: 520px){
+        .credit{
+            padding: 12px;
+        }
+       a{
+            font-size: 14px;
+        }
+    }
 </style>
