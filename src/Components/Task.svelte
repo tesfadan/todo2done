@@ -6,46 +6,28 @@ import { store } from "../store";
         id: Number,
         completed: Boolean,
         archived: Boolean
-    };
-
-    export let markTask;
+    }, markTask;
 
     let editMode = false;
 
-    const edit =()=>{
-        if(editMode){
-            // update here 
-            let index = $store.tasks.findIndex(t => t.id === task.id);
-            $store.tasks[index] = task;
-            Local().update($store.tasks);
-        }
-        else{
-            // start editing
-            console.log("Start Editing")
-        }
+    let index = $store.tasks.findIndex(t => t.id === task.id);
 
-       return editMode = !editMode;
+    const update =(input)=>{
+        // console.log("Update");
+        editMode = false;
+        $store.tasks[index].task = input;
+        Local().update($store.tasks);
     }
 
 </script>
 
 <div class={`task  ${editMode ? 'editing' : ' ' }`}>
-    {#if editMode}
-         <!-- content here -->
-    <input 
+    <p 
         class="taskContent"
-        bind:value={task.task}
-        on:blur={()=> {
-            // console.log(`Blur ${task.task}`);
-            editMode = false
-            }}
-        on:click={edit} 
-        autofocus
-        >
-    {:else}
-         <!-- else content here -->
-    <div on:click={edit} class="taskContent">{task.task}</div>
-    {/if}
+        contenteditable={true}
+        on:click={()=> editMode = true}
+        on:dblclick={e => update(e.target.innerText)}
+        on:blur={e => update(e.target.innerText)}>{task.task}</p>
 
          <!-- content here -->
     <div class="taskOptions {editMode ? 'editMode' : ''}">
