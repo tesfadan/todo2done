@@ -36,11 +36,12 @@ import { store } from "../store";
         class="taskContent"
         bind:value={task.task}
         on:blur={console.log("BLURED")}
-        on:dblclick={edit} 
+        on:click={edit} 
+        autofocus
         >
     {:else}
          <!-- else content here -->
-    <div on:dblclick={edit} class="taskContent">{task.task}</div>
+    <div on:click={edit} class="taskContent">{task.task}</div>
     {/if}
 
          <!-- content here -->
