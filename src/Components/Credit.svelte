@@ -25,6 +25,7 @@
         margin-right: 18px;
         text-decoration: none;
         transition: 0.07s ease-in;
+        user-select: none;
     }
 
     a:hover{

@@ -102,6 +102,7 @@ import { change,store } from "../store";
         font-size: 18px;
         width: 136px;
         font-weight: 500;
+        user-select: none;
     }
 
     @media(max-width: 640px){

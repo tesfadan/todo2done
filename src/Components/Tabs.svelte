@@ -48,6 +48,7 @@
         cursor: pointer;
         margin-right: 20px;
         color: #9697af;
+        user-select: none;
     }
 
     .tabs .active{

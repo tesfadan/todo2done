@@ -36,6 +36,7 @@ import { store } from "../store";
         font-size: 24px;
         font-weight: 600;
         color: #CDCFE850;
+        user-select: none;
     }
 
     @media(max-width: 640px){

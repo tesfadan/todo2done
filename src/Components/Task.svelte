@@ -119,6 +119,7 @@ import { store } from "../store";
     .taskOptions button{
         margin-left: 12px;
         cursor: pointer;
+        user-select: none;
     }
 
     .taskOptions.editMode{
