@@ -35,7 +35,10 @@ import { store } from "../store";
     <input 
         class="taskContent"
         bind:value={task.task}
-        on:blur={console.log("BLURED")}
+        on:blur={()=> {
+            // console.log(`Blur ${task.task}`);
+            editMode = false
+            }}
         on:click={edit} 
         autofocus
         >
