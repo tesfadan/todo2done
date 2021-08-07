@@ -77,13 +77,12 @@
 <style>
     .container{
         display: flex;
-        align-items: center;
         justify-content: center;
+        height: 100vh;
     }
     .app{
         max-width: 1020px;
         width: -webkit-fill-available;
-        height: 100vh;
         position: relative;
     }
 
@@ -103,7 +102,6 @@
         .list{
             padding: 0px 16px;
         }
-
     }
 
 
