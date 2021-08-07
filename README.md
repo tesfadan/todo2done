@@ -8,4 +8,4 @@ todo2Done is a fun litle project I worked on to learn [`Svelte.js`](https://gith
 
 ## Connect
 
-Connect with me on [`twitter`](https://twitter.com/tesfadan) to follow along my juorney of learning and building cool things with JavaScript.
+Connect with me on [`twitter`](https://twitter.com/tesfadan) to follow along my journey of learning and building cool things with JavaScript.
