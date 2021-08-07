@@ -1,14 +1,42 @@
 {
     "short_name": "Todo2Done",
-    "name": "A To Do app built with Svelte.",
+    "name": "Todo2Done | Svelte.Js",
+    "description": "A To Do app built with Svelte",
+    "start_url": ".",
+    "Scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#141627",
+    "background_color": "#EEEFF6",
     "icons": [{
-        {
-            "src": "favicon.png",
+            "src": "/icons/todo2Done.png",
             "type": "image/png",
             "sizes": "512x512"
-        }],
-        "start_url": ".",
-        "display": "standalone",
-        "theme_color": "#141627",
-        "background_color": "#EEEFF6"
-    }
+        },
+        {
+            "src": "/icons/todo2Done192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/icons/todo2Done64.png",
+            "type": "image/png",
+            "sizes": "64x64"
+        },
+        {
+            "src": "/icons/todo2Done32.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        },
+        {
+            "src": "/icons/todo2Done24.png",
+            "type": "image/png",
+            "sizes": "24x24"
+        },
+        {
+            "src": "/icons/todo2Done16.png",
+            "type": "image/png",
+            "sizes": "16x16"
+        }
+    ]
+}
