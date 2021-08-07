@@ -1,0 +1,14 @@
+{
+    "short_name": "Todo2Done",
+    "name": "A To Do app built with Svelte.",
+    "icons": [{
+        {
+            "src": "favicon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }],
+        "start_url": ".",
+        "display": "standalone",
+        "theme_color": "#141627",
+        "background_color": "#EEEFF6"
+    }
